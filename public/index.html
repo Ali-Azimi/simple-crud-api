@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fa-IR">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>لیست دانشجویان</title>
+      <script src="app.js" defer></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
+
+
+</head>
+
+<body>
+      <div class="container mt-5">
+            <h1>Student List</h1>
+            <section class="d-flex justify-content-between">
+                  <div>
+                        <button class="btn btn-primary all">All Students</button>
+                        <button class="btn btn-success success">Success</button>
+                        <button class="btn btn-danger failur">Failurs</button>
+                  </div>
+                  <button 
+                        type="button"
+                        class="btn btn-info failur" 
+                        data-toggle="modal" 
+                        data-target="#addStudent">+ Add Student</button>
+            </section>
+            <section id="root" class="row mt-5">
+
+            </section>
+      </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="addStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Add Student</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- FORM -->
+            <form>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Family</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="family" id="family" placeholder="Family">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Score</label>
+                        <div class="col-sm-10">
+                          <input type="number" class="form-control" name="score" id="score" placeholder="Score">
+                        </div>
+                      </div>
+                  
+                 
+                  <div class="form-group row">
+                    <div class="col-sm-10">
+                      <button type="submit" class="btn btn-primary" onclick="addStudent(event)">+ Add</button>
+                    </div>
+                  </div>
+                </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <script type="x-tmpl-mustache" id="template">
+      {{#data}}
+                  <div class="card col-3" style="width: 18rem;">
+                        <div class="card-body">
+                              <h5 class="card-title">{{name}} {{family}}</h5>
+                              <p class="card-text">{{score}}</p>
+                        </div>
+                  </div>
+      {{/data}}
+</script>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+
+
+mysql syntax
+	- CREATE SCHEMA `JS_121` DEFAULT CHARACTER SET utf8 ;
+	- CREATE TABLE `JS_121`.`students` (
+	  `id` INT NOT NULL AUTO_INCREMENT,
+	  `name` VARCHAR(45) NULL,
+	  `family` VARCHAR(45) NULL,
+	  `score` INT NULL,
+	  `craeted_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	  PRIMARY KEY (`id`));
+
+
+
+
+
+
+	  -- Query
+-- CRUD
+SELECT * FROM students;
+INSERT INTO students (name,family,score) VALUES ('sana', 'samin', 100);
+SELECT * FROM students LIMIT 10,5;
+SELECT * FROM students ORDER BY id DESC;
+SELECT * FROM students WHERE id=2;
+SELECT * FROM students WHERE id=2 AND name='sara';
+SELECT * FROM students WHERE id=2 OR name='sara';
+SELECT * FROM students WHERE name LIKE "%sa%";
+SELECT * FROM students WHERE name REGEXP 'sa.';
+SELECT name as harchi FROM students;
+UPDATE students SET name='hassan' WHERE id=2;
+DELETE FROM students WHERE id=2;
+
+
+
+
+
+
+
+
+
+

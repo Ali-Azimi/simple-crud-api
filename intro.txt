@@ -1,0 +1,17 @@
+
+Storage
+	FILE
+
+	RDBMS
+		ms-sql
+		mysql
+		Oracle
+		Sqlite
+		PostgreSQL
+		DB II
+		FireBird
+
+	non-Realational (NoSQL)
+		Mongodb
+		redis, memcahe
+		...
